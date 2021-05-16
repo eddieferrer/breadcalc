@@ -1,93 +1,85 @@
 <template>
   <div id="app">
-    <div class="header">
-      <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
-        <a class="pure-menu-heading" href="">Your Site</a>
+    <div id="layout" class="pure-g">
+      <div class="sidebar pure-u-1 pure-u-md-1-4">
+        <div class="header">
+          <h1 class="brand-title">A Sample Blog</h1>
+          <h2 class="brand-tagline">Creating a blog layout using Pure</h2>
 
-        <ul class="pure-menu-list">
-          <li class="pure-menu-item pure-menu-selected">
-            <a href="#" class="pure-menu-link">Home</a>
-          </li>
-          <li class="pure-menu-item">
-            <a href="#" class="pure-menu-link">Tour</a>
-          </li>
-          <li class="pure-menu-item">
-            <a href="#" class="pure-menu-link">Sign Up</a>
-          </li>
-        </ul>
+          <nav class="nav">
+            <ul class="nav-list">
+              <li class="nav-item">
+                <a class="pure-button" href="http://purecss.io">Pure</a>
+              </li>
+              <li class="nav-item">
+                <a class="pure-button" href="http://yuilibrary.com"
+                  >YUI Library</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+
+      <div class="content pure-u-1 pure-u-md-3-4">
+        <div>
+          <!-- A wrapper for all the blog posts -->
+          <div class="posts">
+            <h1 class="content-subhead">Pinned Post</h1>
+
+            <!-- A single blog post -->
+            <section class="post">
+              <header class="post-header">
+                <h2 class="post-title">Introducing Pure</h2>
+              </header>
+
+              <div class="post-description">
+                <p>
+                  Yesterday at CSSConf, we launched Pure – a new CSS library.
+                  Phew! Here are the
+                  <a href="https://speakerdeck.com/tilomitra/pure-bliss"
+                    >slides from the presentation</a
+                  >. Although it looks pretty minimalist, we’ve been working on
+                  Pure for several months. After many iterations, we have
+                  released Pure as a set of small, responsive, CSS modules that
+                  you can use in every web project.
+                </p>
+              </div>
+            </section>
+
+            <router-view />
+          </div>
+
+          <div class="footer">
+            <div class="pure-menu pure-menu-horizontal">
+              <ul>
+                <li class="pure-menu-item">
+                  <a href="http://purecss.io/" class="pure-menu-link">About</a>
+                </li>
+                <li class="pure-menu-item">
+                  <a
+                    href="http://twitter.com/yuilibrary/"
+                    class="pure-menu-link"
+                    >Twitter</a
+                  >
+                </li>
+                <li class="pure-menu-item">
+                  <a
+                    href="http://github.com/pure-css/pure/"
+                    class="pure-menu-link"
+                    >GitHub</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-
-    <div class="splash-container">
-      <div class="splash">
-        <h1 class="splash-head">Big Bold Text</h1>
-        <p class="splash-subhead">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        </p>
-        <p>
-          <a href="http://purecss.io" class="pure-button pure-button-primary"
-            >Get Started</a
-          >
-        </p>
-      </div>
-    </div>
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
   </div>
 </template>
 
 <style lang="scss">
-* {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-/*
- * -- BASE STYLES --
- * Most of these are inherited from Base, but I want to change a few.
- */
-body {
-  line-height: 1.7em;
-  color: #7f8c8d;
-  font-size: 13px;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-label {
-  color: #34495e;
-}
-
-.pure-img-responsive {
-  max-width: 100%;
-  height: auto;
-}
-
-/*
- * -- LAYOUT STYLES --
- * These are some useful classes which I will need
- */
-.l-box {
-  padding: 1em;
-}
-
-.l-box-lrg {
-  padding: 2em;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-.is-center {
-  text-align: center;
-}
-
 /*
  * -- PURE FORM STYLES --
  * Style the form inputs and labels
@@ -124,201 +116,148 @@ a.pure-button-primary {
   font-size: 120%;
 }
 
-/*
- * -- MENU STYLES --
- * I want to customize how my .pure-menu looks at the top of the page
- */
-
-.home-menu {
-  padding: 0.5em;
-  text-align: center;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-}
-.home-menu {
-  background: #2d3e50;
-}
-.pure-menu.pure-menu-fixed {
-  /* Fixed menus normally have a border at the bottom. */
-  border-bottom: none;
-  /* I need a higher z-index here because of the scroll-over effect. */
-  z-index: 4;
+/* BLOG
+**/
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-.home-menu .pure-menu-heading {
-  color: white;
-  font-weight: 400;
-  font-size: 120%;
+a {
+  text-decoration: none;
+  color: rgb(61, 146, 201);
+}
+a:hover,
+a:focus {
+  text-decoration: underline;
 }
 
-.home-menu .pure-menu-selected a {
-  color: white;
-}
-
-.home-menu a {
-  color: #6fbef3;
-}
-.home-menu li a:hover,
-.home-menu li a:focus {
-  background: none;
-  border: none;
-  color: #aecfe5;
-}
-
-/*
- * -- SPLASH STYLES --
- * This is the blue top section that appears on the page.
- */
-
-.splash-container {
-  background: #1f8dd6;
-  z-index: 1;
-  overflow: hidden;
-  /* The following styles are required for the "scroll-over" effect */
-  width: 100%;
-  height: 88%;
-  top: 0;
-  left: 0;
-  position: fixed !important;
-}
-
-.splash {
-  /* absolute center .splash within .splash-container */
-  width: 80%;
-  height: 50%;
-  margin: auto;
-  position: absolute;
-  top: 100px;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  text-align: center;
-  text-transform: uppercase;
-}
-
-/* This is the main heading that appears on the blue section */
-.splash-head {
-  font-size: 20px;
-  font-weight: bold;
-  color: white;
-  border: 3px solid white;
-  padding: 1em 1.6em;
+h3 {
   font-weight: 100;
-  border-radius: 5px;
-  line-height: 1em;
 }
 
-/* This is the subheading that appears on the blue section */
-.splash-subhead {
-  color: white;
-  letter-spacing: 0.05em;
-  opacity: 0.8;
+/* LAYOUT CSS */
+#layout {
+  padding: 0;
 }
 
-/*
- * -- CONTENT STYLES --
- * This represents the content area (everything below the blue section)
- */
-.content-wrapper {
-  /* These styles are required for the "scroll-over" effect */
-  position: absolute;
-  top: 87%;
-  width: 100%;
-  min-height: 12%;
-  z-index: 2;
-  background: white;
+.header {
+  text-align: center;
+  top: auto;
+  margin: 3em auto;
 }
 
-/* We want to give the content area some more padding */
-.content {
-  padding: 1em 1em 3em;
+.sidebar {
+  background: rgb(61, 79, 93);
+  color: #fff;
 }
 
-/* This is the class used for the main content headers (<h2>) */
-.content-head {
-  font-weight: 400;
+.brand-title,
+.brand-tagline {
+  margin: 0;
+}
+.brand-title {
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin: 2em 0 1em;
+}
+.brand-tagline {
+  font-weight: 300;
+  color: rgb(176, 202, 219);
 }
 
-/* This is a modifier class used when the content-head is inside a ribbon */
-.content-head-ribbon {
-  color: white;
+.nav-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.nav-item {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+}
+.nav-item a {
+  background: transparent;
+  border: 2px solid rgb(176, 202, 219);
+  color: #fff;
+  margin-top: 1em;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: 85%;
+}
+.nav-item a:hover,
+.nav-item a:focus {
+  border: 2px solid rgb(61, 146, 201);
+  text-decoration: none;
 }
 
-/* This is the class used for the content sub-headers (<h3>) */
 .content-subhead {
-  color: #1f8dd6;
-}
-.content-subhead i {
-  margin-right: 7px;
-}
-
-/* This is the class used for the dark-background areas. */
-.ribbon {
-  background: #2d3e50;
+  text-transform: uppercase;
   color: #aaa;
+  border-bottom: 1px solid #eee;
+  padding: 0.4em 0;
+  font-size: 80%;
+  font-weight: 500;
+  letter-spacing: 0.1em;
 }
 
-/* This is the class used for the footer */
+.content {
+  padding: 2em 1em 0;
+}
+
+.post {
+  padding-bottom: 2em;
+}
+.post-title {
+  font-size: 2em;
+  color: #222;
+  margin-bottom: 0.2em;
+}
+.post-description {
+  font-family: Georgia, "Cambria", serif;
+  color: #444;
+  line-height: 1.8em;
+}
+
+.post-images {
+  margin: 1em 0;
+}
+
 .footer {
-  background: #111;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
+  padding: 1em 0;
+}
+.footer a {
+  color: #ccc;
+  font-size: 80%;
+}
+.footer .pure-menu a:hover,
+.footer .pure-menu a:focus {
+  background: none;
 }
 
-/*
- * -- TABLET (AND UP) MEDIA QUERIES --
- * On tablets and other medium-sized devices, we want to customize some
- * of the mobile styles.
- */
 @media (min-width: 48em) {
-  /* We increase the body font size */
-  body {
-    font-size: 16px;
+  .content {
+    padding: 2em 3em 0;
+    margin-left: 25%;
   }
 
-  /* We can align the menu header to the left, but float the
-    menu items to the right. */
-  .home-menu {
-    text-align: left;
-  }
-  .home-menu ul {
-    float: right;
+  .header {
+    margin: 80% 2em 0;
+    text-align: right;
   }
 
-  /* We increase the height of the splash-container */
-  /*    .splash-container {
-        height: 500px;
-    }*/
-
-  /* We decrease the width of the .splash, since we have more width
-    to work with */
-  .splash {
-    width: 50%;
-    height: 50%;
+  .sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
   }
 
-  .splash-head {
-    font-size: 250%;
-  }
-
-  /* We remove the border-separator assigned to .l-box-lrg */
-  .l-box-lrg {
-    border: none;
+  .footer {
+    text-align: center;
   }
 }
 
-/*
- * -- DESKTOP (AND UP) MEDIA QUERIES --
- * On desktops and other large devices, we want to over-ride some
- * of the mobile and tablet styles.
- */
-@media (min-width: 78em) {
-  /* We increase the header font size even more */
-  .splash-head {
-    font-size: 300%;
-  }
+/* Custom Bread Calc CSS */
+.l-box {
+  padding: 1em 1em 1em 0;
 }
 </style>
