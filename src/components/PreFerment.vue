@@ -4,20 +4,21 @@
     <fieldset>
       <label for="flour">Flour</label>
       <input
-        v-model="flour"
+        v-model.number="flour"
         id="flour"
-        type="text"
+        type="number"
         placeholder="Amount of flour fed to levain"
       />
 
       <label for="water">Water</label>
       <input
-        v-model="water"
+        v-model.number="water"
         id="water"
-        type="text"
-        placeholder="Amount of flour fed to levain"
+        type="number"
+        placeholder="Amount of water fed to levain"
       />
     </fieldset>
+    <fieldset>Levain Hydration: {{ levainHydration }}%</fieldset>
   </form>
 </template>
 
@@ -28,10 +29,10 @@ export default {
   computed: {
     water: {
       get() {
-        return this.$store.getters.levainFlour;
+        return this.$store.getters.levainWater;
       },
       set(value) {
-        this.$store.commit("levainFlour", value);
+        this.$store.commit("levainWater", value);
       },
     },
     flour: {
@@ -41,6 +42,9 @@ export default {
       set(value) {
         this.$store.commit("levainFlour", value);
       },
+    },
+    levainHydration() {
+      return this.$store.getters.levainHydration;
     },
   },
 };
