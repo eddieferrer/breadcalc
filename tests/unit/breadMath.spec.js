@@ -19,6 +19,6 @@ describe("BreadMath Tests", () => {
       water: 700,
     };
 
-    expect(calcHydration(testObj)).toBe(0.7);
+    expect(calcHydration(testObj)).toBe(70);
   });
 });

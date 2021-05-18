@@ -1,25 +1,28 @@
 <template>
-  <form class="pure-form pure-form-stacked">
-    Levain
-    <fieldset>
-      <label for="flour">Flour</label>
-      <input
-        v-model.number="flour"
-        id="flour"
-        type="number"
-        placeholder="Amount of flour fed to levain"
-      />
+  <div class="posts">
+    <h1 class="content-subhead">Levain</h1>
+    <p>Amount fed to levain. In grams</p>
+    <form class="pure-form pure-form-stacked">
+      <fieldset>
+        <label for="flour">Flour</label>
+        <input
+          v-model.number="flour"
+          id="flour"
+          type="number"
+          placeholder="Amount of flour fed to levain"
+        />
 
-      <label for="water">Water</label>
-      <input
-        v-model.number="water"
-        id="water"
-        type="number"
-        placeholder="Amount of water fed to levain"
-      />
-    </fieldset>
-    <fieldset>Levain Hydration: {{ levainHydration }}%</fieldset>
-  </form>
+        <label for="water">Water</label>
+        <input
+          v-model.number="water"
+          id="water"
+          type="number"
+          placeholder="Amount of water fed to levain"
+        />
+      </fieldset>
+      <fieldset>Levain Hydration: {{ levainHydration }}%</fieldset>
+    </form>
+  </div>
 </template>
 
 <script>

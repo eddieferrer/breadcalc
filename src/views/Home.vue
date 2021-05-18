@@ -11,7 +11,7 @@
           <PreFerment />
         </div>
       </div>
-      <div class="pure-u-1 pure-u-md-1-2">
+      <div class="pure-u-1">
         <div class="l-box">
           <Results />
         </div>
