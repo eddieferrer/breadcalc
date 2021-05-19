@@ -20,8 +20,15 @@
           placeholder="Amount of water fed to levain"
         />
       </fieldset>
-      <fieldset>Levain Hydration: {{ levainHydration }}%</fieldset>
     </form>
+    <table class="pure-table">
+      <tbody>
+        <tr class="pure-table-odd">
+          <td>Levain Hydration</td>
+          <td>{{ levainHydration }}%</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </template>
 

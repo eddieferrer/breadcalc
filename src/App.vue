@@ -14,8 +14,7 @@
 
         <div class="footer">
           <p>
-            This is another bread calculator. I didn't like the ones out there.
-            Based on this informative post:
+            This is another bread calculator. Based on this informative post:
             <a href="https://www.thefreshloaf.com/node/64600/levain-calculation"
               >Levain Calculation | The Fresh Loaf</a
             >
@@ -35,37 +34,17 @@
 </template>
 
 <style lang="scss">
-body {
-  background-color: #fbf6ee;
-  color: #333;
-}
-
-/*
- * -- PURE FORM STYLES --
- * Style the form inputs and labels
- */
-.pure-form.pure-form-stacked label {
-  margin: 1em 0 0;
-  font-weight: bold;
-  font-size: 100%;
-}
-.pure-form.pure-form-stacked label:first-child {
-  margin-top: 0;
-}
-.pure-form.pure-form-stacked input[type] {
-  border: 2px solid #ddd;
-  box-shadow: none;
-  font-size: 100%;
-  width: 100%;
-  padding: 0.55rem;
-}
-
-/* BLOG
+/* STYLES
 **/
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+}
+
+body {
+  background-color: #fbf6ee;
+  color: #333;
 }
 
 a {
@@ -112,31 +91,6 @@ h3 {
   color: rgb(176, 202, 219);
 }
 
-.nav-list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-.nav-item {
-  display: inline-block;
-  *display: inline;
-  zoom: 1;
-}
-.nav-item a {
-  background: transparent;
-  border: 2px solid rgb(176, 202, 219);
-  color: #fff;
-  margin-top: 1em;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  font-size: 85%;
-}
-.nav-item a:hover,
-.nav-item a:focus {
-  border: 2px solid rgb(61, 146, 201);
-  text-decoration: none;
-}
-
 .content-subhead {
   text-transform: uppercase;
   color: #666;
@@ -162,7 +116,7 @@ h3 {
 
 @media (min-width: 48em) {
   .content {
-    padding: 2em 3em 0;
+    padding: 2em 2.5em 0;
     margin-left: 33.33%;
   }
 
@@ -183,6 +137,26 @@ h3 {
   .footer {
     text-align: center;
   }
+}
+
+/*
+ * -- PURE FORM STYLES --
+ * Style the form inputs and labels
+ */
+.pure-form.pure-form-stacked label {
+  margin: 1em 0 0;
+  font-weight: bold;
+  font-size: 100%;
+}
+.pure-form.pure-form-stacked label:first-child {
+  margin-top: 0;
+}
+.pure-form.pure-form-stacked input[type] {
+  border: 2px solid #ddd;
+  box-shadow: none;
+  font-size: 100%;
+  width: 100%;
+  padding: 0.65rem;
 }
 
 /* Custom Bread Calc CSS */
