@@ -33,6 +33,15 @@
   </div>
 </template>
 
+<script>
+export default {
+  name: "app",
+  created() {
+    this.$store.dispatch("initializeStore");
+  },
+};
+</script>
+
 <style lang="scss">
 /* STYLES
 **/

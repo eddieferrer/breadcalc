@@ -37,7 +37,15 @@ export default {
       state.dough.levain = n;
     },
   },
-  actions: {},
+  actions: {
+    initializeStore({ state }) {
+      if (localStorage.getItem("state")) {
+        this.replaceState(
+          Object.assign(state, JSON.parse(localStorage.getItem("state")))
+        );
+      }
+    },
+  },
   modules: {},
   getters: {
     levainFlour: (state) => {
