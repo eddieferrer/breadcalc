@@ -2,6 +2,7 @@ import {
   calcHydration,
   calcPercentage,
   calcFromPercentage,
+  roundToTwo,
 } from "@/utils/breadMath";
 
 export default {
@@ -9,6 +10,7 @@ export default {
     levain: {
       flour: 120,
       water: 120,
+      composite: [],
     },
     dough: {
       flour: 880,
@@ -23,6 +25,9 @@ export default {
     },
     levainWater(state, n) {
       state.levain.water = n;
+    },
+    levainComposite(state, n) {
+      state.levain.composite = n;
     },
     doughFlour(state, n) {
       state.dough.flour = n;
@@ -53,6 +58,9 @@ export default {
     },
     levainWater: (state) => {
       return state.levain?.water;
+    },
+    levainComposite: (state) => {
+      return state.levain?.composite;
     },
     levainFlourPercentage: (state) => {
       return calcPercentage({
@@ -97,10 +105,10 @@ export default {
       return state.dough?.levain;
     },
     totalFlour(state, getters) {
-      return getters.levainFlourGrams + getters.doughFlour;
+      return roundToTwo(getters.levainFlourGrams + getters.doughFlour);
     },
     totalWater(state, getters) {
-      return getters.levainWaterGrams + getters.doughWater;
+      return roundToTwo(getters.levainWaterGrams + getters.doughWater);
     },
   },
 };

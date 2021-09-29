@@ -1,6 +1,6 @@
 <template>
   <div class="posts">
-    <h1 class="content-subhead">Dough</h1>
+    <h3 class="content-subhead">Dough</h3>
     <p>Composition of dough. In grams</p>
     <form class="pure-form pure-form-stacked">
       <fieldset>

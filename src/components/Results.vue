@@ -1,7 +1,14 @@
 <template>
   <div class="posts">
-    <h1 class="content-subhead">Results</h1>
+    <h3 class="content-subhead">Final Dough</h3>
     <table class="pure-table">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Total</th>
+          <th>Bakers %</th>
+        </tr>
+      </thead>
       <tbody>
         <tr>
           <td>Total Flour</td>
@@ -95,7 +102,9 @@ export default {
 
 <style scoped lang="scss">
 table {
-  max-width: 28rem;
   width: 100%;
+  td:first-child {
+    text-align: right;
+  }
 }
 </style>
