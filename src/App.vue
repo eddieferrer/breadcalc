@@ -111,7 +111,7 @@ h3 {
 }
 
 .content {
-  padding: 2em 1em 0;
+  padding: 0em 0.5rem;
 }
 
 .post {
@@ -125,7 +125,6 @@ h3 {
 
 @media (min-width: 48em) {
   .content {
-    padding: 2em 2.5em 0;
     margin-left: 33.33%;
   }
 
@@ -167,10 +166,23 @@ h3 {
   width: 100%;
   padding: 0.65rem;
 }
+.pure-form button {
+  background: none !important;
+  border: none;
+  padding: 0rem;
+  /*optional*/
+  font-family: arial, sans-serif;
+  /*input has OS specific font-family*/
+  color: rgb(61, 146, 201);
+  // text-decoration: none;
+  cursor: pointer;
+  text-align: right;
+  width: 100%;
+}
 
 /* Custom Bread Calc CSS */
 .l-box {
-  padding: 1em 1em 1em 0;
+  padding: 1em;
 }
 table {
   background-color: white;

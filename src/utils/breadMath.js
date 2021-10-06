@@ -12,7 +12,7 @@ export function calcHydration({ flour, water }) {
  * Rounds to 2 decimal places if necessary
  * https://stackoverflow.com/questions/11832914/how-to-round-to-at-most-2-decimal-places-if-necessary
  **/
-function roundToTwo(num) {
+export function roundToTwo(num) {
   return +(Math.round(num + "e+2") + "e-2");
 }
 
